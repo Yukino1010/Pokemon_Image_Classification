@@ -4,7 +4,9 @@
 <p align="center"><img width="200px" src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/centered-sprites/gen05_black-white/483.png" />&emsp;&emsp;&emsp;&emsp;&emsp;<img width="200px" src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/centered-sprites/gen05_black-white/484.png" /></p>
 
 ## Introduce
-
+The topic this time is pokemon attribute classification,because many pokemons have dual attributes, only one of them will be used this time.<br>
+In this implementation,I seperate train and test data randomly instead of seperate by the unique sprite to avoid the situation that some kinds of attribute only appear in testing data or training data.<br>
+Alough there is a little bit overfitting during the training process, but I think the performence of the model is already enough for the classification.
 
 ## Network Structure
 
@@ -15,7 +17,6 @@
 ### network design
 - use structure similar to AlexNet but reduce the filter of each layers
 - add AveragePooling behind the last Conv2d to reduce the parameter of Dense
-- 
 ## Data
 this data set was collected from [Veekun](https://veekun.com/) and processed by  [Journal of Geek Studies](https://jgeekstudies.org/)
 
@@ -34,7 +35,9 @@ From the results of the picture, it seems that it can indeed solve the overfitti
 
 ## Result
  
-<p align="center"><img width="400px" src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/train_result.png"><img width="400px"  src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/result.png"></p>
-<br>
+<p align="center"><img width="450px" src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/train_result.png"><img width="450px"  src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/result.png"></p>
 <p align="center"><img width="700px" src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/pictur_10.png"><img width="700px"  src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/pictur_3.png"></p>
 
+## References
+Journal of Geek Studies (https://jgeekstudies.org/)<br>
+Neuralmon  (https://github.com/hemagso/Neuralmon)
