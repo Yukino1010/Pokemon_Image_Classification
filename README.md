@@ -15,16 +15,26 @@
 ### network design
 - use structure similar to AlexNet but reduce the filter of each layers
 - add AveragePooling behind the last Conv2d to reduce the parameter of Dense
+- 
+## Data
+this data set was collected from [Veekun](https://veekun.com/) and processed by  [Journal of Geek Studies](https://jgeekstudies.org/)
+
 
 ## Loss and Accuracy
 
-![image](https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/model/structure.png)
+![image](https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/accracy_loss/origin.png)
 
 At the begining I use the origin data to train my model.Although I got 60% accuracy on testing data ,but it was obviously overfitting to the training data,
 so I consider to do data augumentation to slove this problem.
 
-![image](https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/model/structure.png)
+**after data augumentation** 
+![image](https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/accracy_loss/data_aug.png)
 
 From the results of the picture, it seems that it can indeed solve the overfitting problem, but at the same time it also reduces the accuracy rate.
 
 ## Result
+ 
+<p align="center"><img width="400px" src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/train_result.png"><img width="400px"  src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/result.png"></p>
+<br>
+<p align="center"><img width="700px" src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/pictur_10.png"><img width="700px"  src="https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/result/pictur_3.png"></p>
+
