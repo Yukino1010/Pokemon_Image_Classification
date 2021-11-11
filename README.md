@@ -6,12 +6,11 @@
 ## Introduce
 
 ## Network Structure
+
 **architecture**  
 &emsp;
 ![image](https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/model/structure.png)
 &emsp;
 ### network design
-- Replace transposed convolutions with  upsampling2d and conv2d
-- Remove Batch Normalization in discriminator or use Layer Normalization 
-- add gradient penalty behind loss function
-- use Leaky-Relu behind all the CNN
+- use structure similar to AlexNet but reduce the filter of each layers
+- add AveragePooling behind the last Conv2d to reduce the parameter of Dense
