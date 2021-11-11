@@ -148,9 +148,9 @@ plt.legend(['train', 'test'], loc='upper left')
 plt.savefig(r"accracy_loss/data_aug.png")
 
 plt.show()
+#%%
 
-
-model.load_weights(filepath)
+model.load_weights("model/original.h5")
 
 
 # visualize the results
@@ -173,8 +173,8 @@ for i in range(10):
         img = x_test[idx]
         ax = plt.subplot(3, 6, j+1)
         ax.axis('off')
-        ax.text(0.5, -0.35, 'pred = ' + str(preds_single[idx]), fontsize=10, ha='center', transform=ax.transAxes) 
-        ax.text(0.5, -0.7, 'act = ' + str(actual_single[idx]), fontsize=10, ha='center', transform=ax.transAxes)
+        ax.text(0.5, -0.35, 'pred = ' + str(preds_single[idx]), fontsize=15, ha='center', transform=ax.transAxes) 
+        ax.text(0.5, -0.7, 'act = ' + str(actual_single[idx]), fontsize=15, ha='center', transform=ax.transAxes)
         ax.imshow(img)
         
     #plt.savefig("result/pictur_{}".format(i+1))
