@@ -89,7 +89,7 @@ model = Model(input_layer, out_put)
 model.summary()
 
 
-filepath = "model/original.h5"
+filepath = "model/after_data_augumentation.h5"
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
 from tensorflow.keras.callbacks import ModelCheckpoint
@@ -98,22 +98,23 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 checkpoint = ModelCheckpoint(filepath, monitor='val_accuracy', verbose=1, save_best_only=True,
 mode='max')
 
-History = model.fit(x_train, y_train, batch_size=32, validation_data = (x_test,y_test), epochs = 30, callbacks=[checkpoint])
+#History = model.fit(x_train, y_train, batch_size=32, validation_data = (x_test,y_test), epochs = 30, callbacks=[checkpoint])
 
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # data generate
-''' 
+
 img_gen = ImageDataGenerator(
+    rotation_range=30,
     shear_range=0.2,
     zoom_range=0.2,
     horizontal_flip=True
     )
 
-'''
 
-#History = model.fit_generator(img_gen.flow(x_train, y_train, batch_size = 32),
-                                      #steps_per_epoch = len(x_train)/32, validation_data = (x_test,y_test), epochs = 30 , callbacks=[checkpoint])
+
+History = model.fit_generator(img_gen.flow(x_train, y_train, batch_size = 32),
+                                      steps_per_epoch = len(x_train)/32, validation_data = (x_test,y_test), epochs = 30 , callbacks=[checkpoint])
                                       
 #%%
 
@@ -135,9 +136,6 @@ plt.ylabel('accuracy')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
 
-#plt.savefig(r"accracy_loss/acc.png")
-
-plt.show()
 
 plt.subplot(1,2,2)
 plt.plot(History.history['loss'])
@@ -147,7 +145,7 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
 
-#plt.savefig(r"accracy_loss/loss.png")
+plt.savefig(r"accracy_loss/data_aug.png")
 
 plt.show()
 
