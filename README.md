@@ -26,7 +26,7 @@ this data set was collected from [Veekun](https://veekun.com/) and processed by 
 
 ![image](https://github.com/Yukino1010/Pokemon_Image_Classification/blob/master/accracy_loss/origin.png)
 
-At the begining I use the origin data to train my model.Although I got 60% accuracy on testing data ,but it was obviously overfitting to the training data,
+At the begining I use the origin data to train my model.<br>Although I got 60% accuracy on testing data ,but it was obviously overfitting to the training data,
 so I consider to do data augumentation to slove this problem.
 
 **after data augumentation** 
